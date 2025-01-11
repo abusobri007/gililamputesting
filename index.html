@@ -10,6 +10,9 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
   <style>
+    #mobile-menu {
+      display: none;
+  }
    .dark-mode {
      background-color: #1a202c;
      color: #cbd5e0;
@@ -51,46 +54,74 @@
  </head>
  <body class="bg-gray-100">
   <header class="bg-blue-600 text-white p-4">
-      <div class="container mx-auto flex justify-between items-center">
-          <h1 class="text-2xl font-bold">Gili Lampu</h1>
-          <nav class="hidden md:block">
-              <ul class="flex space-x-4">
-                  <li><a class="hover:underline" href="#home">Home</a></li>
-                  <li><a class="hover:underline" href="/cuaca">Lokasi</a></li> 
-                  <li><a class="hover:underline" href="#accommodation">Penginapan</a></li>
-                  <li><a class="hover:underline" href="#trips">Daftar Trip</a></li>
-                  <li><a class="hover:underline" href="#videos">Video</a></li>
-                  <li><a class="hover:underline" href="#contact">Hubungi Kami </a></li>
-              </ul>
-          </nav>
-          <button class="text-white md:hidden" id="menu-toggle">
-              <i class="fas fa-bars"></i>
-          </button>
-          <button class="text-white" id="theme-toggle">
-              <i class="fas fa-moon"></i>
-          </button>
-      </div>
-      <nav class="md:hidden" id="mobile-menu" style="display: none;">
-          <ul class="flex flex-col space-y-2 mt-4">
+    <div class="container mx-auto flex justify-between items-center">
+        <h1 class="text-2xl font-bold">Gili Lampu</h1>
+        <nav class="hidden md:block">
+            <ul class="flex space-x-4">
+                <li><a class="hover:underline" href="#home">Home</a></li>
+                <li><a class="hover:underline" href="#location" id="location-link">Lokasi</a></li> 
+                <li><a class="hover:underline" href="#accommodation">Penginapan</a></li>
+                <li><a class="hover:underline" href="#trips">Daftar Trip</a></li>
+                <li><a class="hover:underline" href="#videos">Video</a></li>
+                <li><a class="hover:underline" href="#contact">Hubungi Kami</a></li>
+            </ul>
+        </nav>
+        <button class="text-white md:hidden" id="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </button>
+        <button class="text-white" id="theme-toggle">
+            <i class="fas fa-moon"></i>
+        </button>
+    </div>
+    <nav class="md:hidden" id="mobile-menu">
+        <ul class="flex flex-col space-y-2 mt-4">
             <li><a class="hover:underline" href="#home">Home</a></li>
-            <li><a class="hover:underline" href="/cuaca">Lokasi</a></li> 
-            <li><a class="hover:underline" href="#facilities">Penginapan</a></li>
+            <li><a class="hover:underline" href="#location" id="mobile-location-link">Lokasi</a></li> 
+            <li><a class="hover:underline" href="#accommodation">Penginapan</a></li>
+            <li><a class="hover:underline" href="#trips">Daftar Trip</a></li>
             <li><a class="hover:underline" href="#videos">Video</a></li>
-            <li><a class="hover:underline" href="#contact">Hubungi Kami </a></li>
-          </ul>
-      </nav>
-  </header>
+            <li><a class="hover:underline" href="#contact">Hubungi Kami</a></li>
+        </ul>
+    </nav>
+</header>
 
-  <script>
-      document.getElementById('menu-toggle').addEventListener('click', function() {
-          var mobileMenu = document.getElementById('mobile-menu');
-          if (mobileMenu.style.display === 'none' || mobileMenu.style.display === '') {
-              mobileMenu.style.display = 'block';
-          } else {
-              mobileMenu.style.display = 'none';
-          }
-      });
-  </script>
+<div id="location-popup" class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center z-50 hidden">
+    <div class="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
+        <h2 class="text-2xl font-bold mb-4">Lokasi</h2>
+        <p>Taman Wisata Gili Lampu.</p>
+        <div id="map-container" class="mt-4">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48708.924316005534!2d116.71873554147064!3d-8.439920608407451!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dcc3da56aa9b10f%3A0x54070e77514a9f52!2sPantai%20Gili%20lampu!5e0!3m2!1sid!2sid!4v1733209780868!5m2!1sid!2sid" allowfullscreen="" loading="lazy" class="w-full h-64"></iframe>
+        </div>
+        <button class="mt-4 bg-blue-600 text-white px-4 py-2 rounded" id="close-popup">Close</button>
+    </div>
+</div>
+
+<script>
+    document.getElementById('menu-toggle').addEventListener('click', function() {
+        var mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenu.style.display === 'none' || mobileMenu.style.display === '') {
+            mobileMenu.style.display = 'block';
+        } else {
+            mobileMenu.style.display = 'none';
+        }
+    });
+
+    document.getElementById('location-link').addEventListener('click', function(event) {
+        event.preventDefault();
+        document.getElementById('location-popup').classList.remove('hidden');
+    });
+
+    document.getElementById('mobile-location-link').addEventListener('click', function(event) {
+        event.preventDefault();
+        document.getElementById('location-popup').classList.remove('hidden');
+    });
+
+    document.getElementById('close-popup').addEventListener('click', function() {
+        document.getElementById('location-popup').classList.add('hidden');
+    });
+</script>
+
+
 
 
 
