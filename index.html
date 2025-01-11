@@ -56,12 +56,11 @@
           <nav class="hidden md:block">
               <ul class="flex space-x-4">
                   <li><a class="hover:underline" href="#home">Home</a></li>
-                  <li><a class="hover:underline" href="/pemandu">Pemandu</a></li>
-                  <li><a class="hover:underline" href="/api">Cuaca</a></li>
-                  <li><a class="hover:underline" href="/cuaca">Rating</a></li> 
-                  <li><a class="hover:underline" href="#facilities">Facilities</a></li>
-                  <li><a class="hover:underline" href="#videos">Videos</a></li>
-                  <li><a class="hover:underline" href="#contact">Contact</a></li>
+                  <li><a class="hover:underline" href="/cuaca">Lokasi</a></li> 
+                  <li><a class="hover:underline" href="#accommodation">Penginapan</a></li>
+                  <li><a class="hover:underline" href="#trips">Daftar Trip</a></li>
+                  <li><a class="hover:underline" href="#videos">Video</a></li>
+                  <li><a class="hover:underline" href="#contact">Hubungi Kami </a></li>
               </ul>
           </nav>
           <button class="text-white md:hidden" id="menu-toggle">
@@ -73,13 +72,11 @@
       </div>
       <nav class="md:hidden" id="mobile-menu" style="display: none;">
           <ul class="flex flex-col space-y-2 mt-4">
-              <li><a class="hover:underline" href="#home">Home</a></li>
-              <li><a class="hover:underline" href="/pemandu">Pemandu</a></li>
-              <li><a class="hover:underline" href="/api">Cuaca</a></li>
-              <li><a class="hover:underline" href="/cuaca">Rating</a></li>
-              <li><a class="hover:underline" href="#facilities">Facilities</a></li>
-              <li><a class="hover:underline" href="#videos">Videos</a></li>
-              <li><a class="hover:underline" href="#contact">Contact</a></li>
+            <li><a class="hover:underline" href="#home">Home</a></li>
+            <li><a class="hover:underline" href="/cuaca">Lokasi</a></li> 
+            <li><a class="hover:underline" href="#facilities">Penginapan</a></li>
+            <li><a class="hover:underline" href="#videos">Video</a></li>
+            <li><a class="hover:underline" href="#contact">Hubungi Kami </a></li>
           </ul>
       </nav>
   </header>
@@ -135,6 +132,14 @@
         .carousel-control-next {
             right: 10px;
         }
+
+        .fade-in {
+          animation: fadeIn 2s ease-in-out;
+      }
+      @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+      }
   </style>
  
   <section class="relative" id="home">
@@ -150,7 +155,7 @@
       <img alt="A stunning sunset over Gili Lampu with vibrant colors in the sky" height="367" src="https://www.thegaterinjani.com/wp-content/uploads/2018/04/Gili-Secret.jpg" width="1461"/>
      </div>
      <div class="carousel-item">
-      <img alt="A serene beach at Gili Lampu with white sands and gentle waves" height="367" src="https://res.klook.com/images/fl_lossy.progressive,q_65/c_fill,w_1200,h_630/w_80,x_15,y_15,g_south_west,l_Klook_water_br_trans_yhcmh3/activities/mpw2siyfwxyjrtdu4fha/Island%20Hopping%20Trip%20Gili%20Kondo,%20Gili%20Bidara,%20dan%20Gili%20Petagan%20dari%20Lombok.jpg" width="1461"/>
+      <img alt="A serene beach at Gili Lampu with white sands and gentle waves" height="367" src="about22.jpg" width="1461"/>
      </div>
     </div>
     <button class="carousel-control-prev" onclick="prevSlide()">
@@ -201,162 +206,297 @@
   </script>
  
   <section class="py-16 bg-white" id="attractions">
-   <div class="container mx-auto text-center">
-    <h2 class="text-3xl font-bold mb-8 fade-in">
-     Wahana 
-    </h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-     <div class="bg-gray-200 p-4 rounded-lg shadow-lg fade-in">
-      <img alt="Donat Boat ride with people enjoying the water" class="w-full h-48 object-cover rounded-t-lg" height="300" src="donat.jpeg" width="400"/>
-      <h3 class="text-xl font-bold mt-4">
-       Donat Boat
-      </h3>
-      <p class="mt-2">
-       Experience the thrill of riding the Donat Boat on the clear waters of Gili Lampu.
-      </p>
-     </div>
-     <div class="bg-gray-200 p-4 rounded-lg shadow-lg fade-in">
-      <img alt="Banana Boat ride with a group of people having fun" class="w-full h-48 object-cover rounded-t-lg" height="300" src="banana.jpeg" width="400"/>
-      <h3 class="text-xl font-bold mt-4">
-       Banana Boat
-      </h3>
-      <p class="mt-2">
-       Join the fun on the Banana Boat and enjoy the waves with friends and family.
-      </p>
+    <div class="container mx-auto text-center">
+     <h2 class="text-3xl font-bold mb-8 fade-in">
+      Wahana
+     </h2>
+     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="bg-white-200 p-4 rounded-lg shadow-lg fade-in">
+       <img alt="Donat Boat ride with people enjoying the water" class="w-full h-48 object-cover rounded-t-lg" height="300" src="donat.jpeg" width="400"/>
+       <h3 class="text-xl font-bold mt-4">
+        Donat Boat
+       </h3>
+       <p class="mt-2">
+        Experience the thrill of riding the Donat Boat on the clear waters of Gili Lampu.
+       </p>
+       <button class="mt-4 bg-blue-500 text-white px-4 py-2 rounded" onclick="showPrice('Donat Boat', 'Rp 25,000/orang')">
+        Lihat Harga
+       </button>
+      </div>
+      <div class="bg-white-200 p-4 rounded-lg shadow-lg fade-in">
+       <img alt="Banana Boat ride with a group of people having fun" class="w-full h-48 object-cover rounded-t-lg" height="300" src="banana.jpeg" width="400"/>
+       <h3 class="text-xl font-bold mt-4">
+        Banana Boat
+       </h3>
+       <p class="mt-2">
+        Join the fun on the Banana Boat and enjoy the waves with friends and family.
+       </p>
+       <button class="mt-4 bg-blue-500 text-white px-4 py-2 rounded" onclick="showPrice('Banana Boat', 'Rp 25,000/orang')">
+        Lihat Harga
+       </button>
+      </div>
      </div>
     </div>
-   </div>
-  </section>
-  <section class="py-16 bg-gray-100" id="trips">
-   <div class="container mx-auto text-center">
-    <h2 class="text-3xl font-bold mb-8 fade-in">
-     Trips
-    </h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-     <div class="bg-white p-4 rounded-lg shadow-lg fade-in">
-      <img alt="Diving trip with divers exploring underwater" class="w-full h-48 object-cover rounded-t-lg" height="300" src= "http://lombokhikes.com/img/gili%20petagan.jpg"width="400"/>
-      <h3 class="text-xl font-bold mt-4">
-       Gili Petagan
-      </h3>
-      <p class="mt-2">
-       Explore the underwater world with our diving trips, perfect for both beginners and experienced divers.
-      </p>
+   </section>
+   <section class="py-16 bg-gray-100" id="trips">
+    <div class="container mx-auto text-center">
+     <h2 class="text-3xl font-bold mb-8 fade-in">
+      Trips
+     </h2>
+     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="bg-white p-4 rounded-lg shadow-lg fade-in">
+       <img alt="Diving trip with divers exploring underwater" class="w-full h-48 object-cover rounded-t-lg" height="300" src="http://lombokhikes.com/img/gili%20petagan.jpg" width="400"/>
+       <h3 class="text-xl font-bold mt-4">
+        Gili Petagan
+       </h3>
+       <p class="mt-2">
+        Explore the underwater world with our diving trips, perfect for both beginners and experienced divers.
+       </p>
+       <button class="mt-4 bg-blue-500 text-white px-4 py-2 rounded" onclick="showPrice('Gili Petagan', 'Rp 400,000')">
+        Lihat Harga
+       </button>
+      </div>
+      <div class="bg-white p-4 rounded-lg shadow-lg fade-in">
+       <img alt="Fishing trip with people catching fish" class="w-full h-48 object-cover rounded-t-lg" height="300" src="https://www.gotravelaindonesia.com/wp-content/uploads/pesona-gili-kapal.jpg" width="400"/>
+       <h3 class="text-xl font-bold mt-4">
+        Gili Kapal
+       </h3>
+       <p class="mt-2">
+        Join our fishing trips and enjoy a day out on the water, catching a variety of fish.
+       </p>
+       <button class="mt-4 bg-blue-500 text-white px-4 py-2 rounded" onclick="showPrice('Gili Kapal', 'Rp 400,000')">
+        Lihat Harga
+       </button>
+      </div>
+      <div class="bg-white p-4 rounded-lg shadow-lg fade-in">
+       <img alt="Snorkeling trip with people observing marine life" class="w-full h-48 object-cover rounded-t-lg" height="300" src="https://yourtrip.id/wp-content/uploads/2022/03/Gili-Bidara-1-768x432.jpg" width="400"/>
+       <h3 class="text-xl font-bold mt-4">
+        Gili Bidara
+       </h3>
+       <p class="mt-2">
+        Discover the vibrant marine life with our snorkeling trips, suitable for all ages.
+       </p>
+       <button class="mt-4 bg-blue-500 text-white px-4 py-2 rounded" onclick="showPrice('Gili Bidara', 'Rp 400,000')">
+        Lihat Harga
+       </button>
+      </div>
+      <div class="bg-white p-4 rounded-lg shadow-lg fade-in">
+       <img alt="Scenic view of Gili Petagan with lush greenery" class="w-full h-48 object-cover rounded-t-lg" height="300" src="https://salsawisata.com/wp-content/uploads/2022/11/camping-di-gili-kondo.jpg" width="400"/>
+       <h3 class="text-xl font-bold mt-4">
+        Gili Kondo
+       </h3>
+       <p class="mt-2">
+        Explore the natural beauty of Gili Petagan, one of the four surrounding islands.
+       </p>
+       <button class="mt-4 bg-blue-500 text-white px-4 py-2 rounded" onclick="showPrice('Gili Kondo', 'Rp 400,000')">
+        Lihat Harga
+       </button>
+      </div>
+      <div class="bg-white p-4 rounded-lg shadow-lg fade-in">
+       <img alt="Aerial view of Gili Kapal with clear blue waters" class="w-full h-48 object-cover rounded-t-lg" height="300" src="https://rinjanifuntrekking.com/wp-content/uploads/2022/03/camp-gili-kondo.jpg" width="400"/>
+       <h3 class="text-xl font-bold mt-4">
+        Camping
+       </h3>
+       <p class="mt-2">
+        Discover the serene and picturesque Gili Kapal, perfect for a peaceful getaway.
+       </p>
+       <button class="mt-4 bg-blue-500 text-white px-4 py-2 rounded" onclick="showPrice('Camping', 'Rp 500,000')">
+        Lihat Harga
+       </button>
+      </div>
+      <div class="bg-white p-4 rounded-lg shadow-lg fade-in">
+       <img alt="Beautiful beach of Gili Bidara with white sand" class="w-full h-48 object-cover rounded-t-lg" height="300" src="https://www.gilibookings.com/cache/image/uploads-company-manta-dive-gili-air-gallery-109-703-diving-manta-gili-islands-group-underwater-photo-jpg-adaptiveresize-800-560-keepaspectratio-keeptransparency-1-constrainonly-1-quality-85.jpg" width="400"/>
+       <h3 class="text-xl font-bold mt-4">
+        Diving
+       </h3>
+       <p class="mt-2">
+        Relax on the pristine beaches of Gili Bidara and soak up the sun.
+       </p>
+       <button class="mt-4 bg-blue-500 text-white px-4 py-2 rounded" onclick="showPrice('Diving', 'Rp 450,000')">
+        Lihat Harga
+       </button>
+      </div>
+      <div class="bg-white p-4 rounded-lg shadow-lg fade-in">
+       <img alt="Gili Kondo with its unique landscape and clear waters" class="w-full h-48 object-cover rounded-t-lg" height="300" src="https://southeastasiabackpacker.com/wp-content/uploads/2022/10/Girl-snorkeling-in-Gili-T.jpg" width="400"/>
+       <h3 class="text-xl font-bold mt-4">
+        Snorkeling
+       </h3>
+       <p class="mt-2">
+        Enjoy the unique landscape and crystal-clear waters of Snorkeling.
+       </p>
+       <button class="mt-4 bg-blue-500 text-white px-4 py-2 rounded" onclick="showPrice('Snorkeling', 'Rp 400,000')">
+        Lihat Harga
+       </button>
+      </div>
+      <div class="bg-white p-4 rounded-lg shadow-lg fade-in">
+       <img alt="Pulau Kenawa with its unique landscape and clear waters" class="w-full h-48 object-cover rounded-t-lg" height="300" src="https://thumbs.dreamstime.com/b/small-tropical-island-white-green-savannah-sandy-beach-beautiful-kenawa-view-above-nature-indonesia-islands-156437073.jpg" width="400"/>
+       <h3 class="text-xl font-bold mt-4">
+        Pulau Kenawa
+       </h3>
+       <p class="mt-2">
+        Enjoy the unique landscape and crystal-clear waters of Pulau Kenawa.
+       </p>
+       <button class="mt-4 bg-blue-500 text-white px-4 py-2 rounded" onclick="showPrice('Pulau Kenawa', 'Rp 2.000,000')">
+        Lihat Harga
+       </button>
+      </div>
+      <div class="bg-white p-4 rounded-lg shadow-lg fade-in">
+       <img alt="Pulau Paserang with its unique landscape and clear waters" class="w-full h-48 object-cover rounded-t-lg" height="300" src="https://yourtrip.id/wp-content/uploads/2022/07/Pulau-Paserang-dari-Udara-1080x570.jpg" width="400"/>
+       <h3 class="text-xl font-bold mt-4">
+        Pulau Paserang
+       </h3>
+       <p class="mt-2">
+        Enjoy the unique landscape and crystal-clear waters of Pulau Paserang.
+       </p>
+       <button class="mt-4 bg-blue-500 text-white px-4 py-2 rounded" onclick="showPrice('Pulau Paserang', 'Rp 2.000,000')">
+        Lihat Harga
+       </button>
+      </div>
      </div>
-     <div class="bg-white p-4 rounded-lg shadow-lg fade-in">
-      <img alt="Fishing trip with people catching fish" class="w-full h-48 object-cover rounded-t-lg" height="300" src= "https://www.gotravelaindonesia.com/wp-content/uploads/pesona-gili-kapal.jpg" width="400"/>
-      <h3 class="text-xl font-bold mt-4">
-       Gili Kapal
-      </h3>
-      <p class="mt-2">
-       Join our fishing trips and enjoy a day out on the water, catching a variety of fish.
-      </p>
-     </div>
-     <div class="bg-white p-4 rounded-lg shadow-lg fade-in">
-      <img alt="Snorkeling trip with people observing marine life" class="w-full h-48 object-cover rounded-t-lg" height="300" src= "https://yourtrip.id/wp-content/uploads/2022/03/Gili-Bidara-1-768x432.jpg" width="400"/>
-      <h3 class="text-xl font-bold mt-4">
-       Gili Bidara
-      </h3>
-      <p class="mt-2">
-       Discover the vibrant marine life with our snorkeling trips, suitable for all ages.
-      </p>
-     </div>
-     <div class="bg-white p-4 rounded-lg shadow-lg fade-in">
-      <img alt="Scenic view of Gili Petagan with lush greenery" class="w-full h-48 object-cover rounded-t-lg" height="300" src= "https://salsawisata.com/wp-content/uploads/2022/11/camping-di-gili-kondo.jpg" width="400"/>
-      <h3 class="text-xl font-bold mt-4">
-       gili Kondo
-      </h3>
-      <p class="mt-2">
-       Explore the natural beauty of Gili Petagan, one of the four surrounding islands.
-      </p>
-     </div>
-     <div class="bg-white p-4 rounded-lg shadow-lg fade-in">
-      <img alt="Aerial view of Gili Kapal with clear blue waters" class="w-full h-48 object-cover rounded-t-lg" height="300" src="https://rinjanifuntrekking.com/wp-content/uploads/2022/03/camp-gili-kondo.jpg" width="400"/>
-      <h3 class="text-xl font-bold mt-4">
-       Camping
-      </h3>
-      <p class="mt-2">
-       Discover the serene and picturesque Gili Kapal, perfect for a peaceful getaway.
-      </p>
-     </div>
-     <div class="bg-white p-4 rounded-lg shadow-lg fade-in">
-      <img alt="Beautiful beach of Gili Bidara with white sand" class="w-full h-48 object-cover rounded-t-lg" height="300" src="https://www.gilibookings.com/cache/image/uploads-company-manta-dive-gili-air-gallery-109-703-diving-manta-gili-islands-group-underwater-photo-jpg-adaptiveresize-800-560-keepaspectratio-keeptransparency-1-constrainonly-1-quality-85.jpg" width="400"/>
-      <h3 class="text-xl font-bold mt-4">
-       diving
-      </h3>
-      <p class="mt-2">
-       Relax on the pristine beaches of Gili Bidara and soak up the sun.
-      </p>
-     </div>
-     <div class="bg-white p-4 rounded-lg shadow-lg fade-in">
-      <img alt="Gili Kondo with its unique landscape and clear waters" class="w-full h-48 object-cover rounded-t-lg" height="300" src="https://southeastasiabackpacker.com/wp-content/uploads/2022/10/Girl-snorkeling-in-Gili-T.jpg" width="400"/>
-      <h3 class="text-xl font-bold mt-4">
-       Snorkling
-      </h3>
-      <p class="mt-2">
-       Enjoy the unique landscape and crystal-clear waters of Snorkling.
-      </p>
-     </div>
-     <div class="bg-white p-4 rounded-lg shadow-lg fade-in">
-        <img alt="Gili Kondo with its unique landscape and clear waters" class="w-full h-48 object-cover rounded-t-lg" height="300" src="https://thumbs.dreamstime.com/b/small-tropical-island-white-green-savannah-sandy-beach-beautiful-kenawa-view-above-nature-indonesia-islands-156437073.jpg" width="400"/>
-        <h3 class="text-xl font-bold mt-4">
-         Pulau Kenawa
-        </h3>
-        <p class="mt-2">
-         Enjoy the unique landscape and crystal-clear waters of Gili Kondo.
-        </p>
-       </div>
-       <div class="bg-white p-4 rounded-lg shadow-lg fade-in">
-        <img alt="Gili Kondo with its unique landscape and clear waters" class="w-full h-48 object-cover rounded-t-lg" height="300" src="https://yourtrip.id/wp-content/uploads/2022/07/Pulau-Paserang-dari-Udara-1080x570.jpg" width="400"/>
-        <h3 class="text-xl font-bold mt-4">
-         Pulau Paserang
-        </h3>
-        <p class="mt-2">
-         Enjoy the unique landscape and crystal-clear waters of Gili Kondo.
-        </p>
-       </div>
+    </div>
+   </section>
+   <div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden" id="priceModal">
+    <div class="bg-white p-8 rounded-lg shadow-lg text-center">
+     <h3 class="text-2xl font-bold mb-4" id="modalTitle">
+     </h3>
+     <p class="text-xl mb-4" id="modalPrice">
+     </p>
+     <button class="mt-4 bg-red-500 text-white px-4 py-2 rounded" onclick="closeModal()">
+      Close
+     </button>
     </div>
    </div>
-  </section>
+   <script>
+    function showPrice(title, price) {
+             document.getElementById('modalTitle').innerText = title;
+             document.getElementById('modalPrice').innerText = price;
+             document.getElementById('priceModal').classList.remove('hidden');
+         }
+ 
+         function closeModal() {
+             document.getElementById('priceModal').classList.add('hidden');
+         }
+   </script>
+  </body>
+ </html>
+ 
+  </body>
+
+ 
+ <div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden" id="priceModal">
+  <div class="bg-white p-8 rounded-lg shadow-lg text-center">
+   <h3 class="text-2xl font-bold mb-4" id="modalTitle">
+   </h3>
+   <p class="text-xl mb-4" id="modalPrice">
+   </p>
+   <button class="mt-4 bg-red-500 text-white px-4 py-2 rounded" onclick="closeModal()">
+    Close
+   </button>
+  </div>
+ </div>
+ <script>
+  function showPrice(title, price) {
+           document.getElementById('modalTitle').innerText = title;
+           document.getElementById('modalPrice').innerText = price;
+           document.getElementById('priceModal').classList.remove('hidden');
+       }
+
+       function closeModal() {
+           document.getElementById('priceModal').classList.add('hidden');
+       }
+ </script>
 
 
-  <section class="container mx-auto py-12">
-    <h2 class="text-3xl font-bold text-center mb-8">Kantin &amp; dan Daftar Menu</h2>
-    <div class="bg-white shadow-md rounded-lg overflow-hidden p-6 flex justify-between items-center">
+
+ <section class="container mx-auto py-12">
+  <h2 class="text-3xl font-bold text-center mb-8">Kantin &amp; Daftar Menu</h2>
+  <div class="bg-white shadow-md rounded-lg overflow-hidden p-6 flex justify-between items-center">
       <div>
-        <h3 class="text-xl font-bold">Kantin Gili Lampu</h3>
-        <p class="text-gray-600">Menyediakan Kuliner yang enak dan tidak menguras kantong</p>
-        <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded">Lihat Harga</button>
+          <h3 class="text-xl font-bold">Kantin Gili Lampu</h3>
+          <p class="text-gray-600">Menyediakan Kuliner yang enak dan tidak menguras kantong</p>
+          <button id="menuButton" class="mt-4 bg-blue-500 text-white py-2 px-4 rounded">Lihat Menu dan Harga</button>
       </div>
       <img alt="Kantin Gili Lampu" class="w-1/3 h-32 object-cover" height="300" src="https://storage.googleapis.com/a1aa/image/eNiTDIiQQOWaPCGuRjySjz6G7g2i1BUdxunAjLo5fandymBUA.jpg" width="400"/>
-    </div>
-    <div class="flex justify-center space-x-4 mt-8">
+  </div>
+  <div class="flex justify-center space-x-4 mt-8">
       <div class="text-center">
-        <img alt="Nasi Goreng" class="w-24 h-24 object-cover rounded-full mx-auto" height="96" src="https://storage.googleapis.com/a1aa/image/sQKhmzZ4ae12RCEEPJtoyAN4TsEIcstLZYRlHYpi0bdKZzAKA.jpg" width="96"/>
-        <p class="mt-2">Nasi Goreng</p>
+          <img alt="Nasi Goreng" class="w-24 h-24 object-cover rounded-full mx-auto" height="96" src="https://storage.googleapis.com/a1aa/image/sQKhmzZ4ae12RCEEPJtoyAN4TsEIcstLZYRlHYpi0bdKZzAKA.jpg" width="96"/>
+          <p class="mt-2">Nasi Goreng</p>
       </div>
       <div class="text-center">
-        <img alt="Lalapan Ayam" class="w-24 h-24 object-cover rounded-full mx-auto" height="96" src="https://storage.googleapis.com/a1aa/image/6iNee2UA4ll8UEOA5dKh56hiwwcEK48INJeyQyfWLagtJbGQB.jpg" width="96"/>
-        <p class="mt-2">Lalapan Ayam</p>
+          <img alt="Lalapan Ayam" class="w-24 h-24 object-cover rounded-full mx-auto" height="96" src="https://storage.googleapis.com/a1aa/image/6iNee2UA4ll8UEOA5dKh56hiwwcEK48INJeyQyfWLagtJbGQB.jpg" width="96"/>
+          <p class="mt-2">Lalapan Ayam</p>
       </div>
       <div class="text-center">
-        <img alt="Lalapan Nila" class="w-24 h-24 object-cover rounded-full mx-auto" height="96" src="https://storage.googleapis.com/a1aa/image/kds8iIXQWLpCPpgIfFt1i57RLScKLQiONI3450y1LeXYymBUA.jpg" width="96"/>
-        <p class="mt-2">Lalapan Nila</p>
+          <img alt="Lalapan Nila" class="w-24 h-24 object-cover rounded-full mx-auto" height="96" src="https://storage.googleapis.com/a1aa/image/kds8iIXQWLpCPpgIfFt1i57RLScKLQiONI3450y1LeXYymBUA.jpg" width="96"/>
+          <p class="mt-2">Lalapan Nila</p>
       </div>
       <div class="text-center">
-        <img alt="Ikan Bakar" class="w-24 h-24 object-cover rounded-full mx-auto" height="96" src="https://storage.googleapis.com/a1aa/image/7edyqvWTXIS1FqLdjZzpal5VGGEOTByjooeMTMU7MS3WymBUA.jpg" width="96"/>
-        <p class="mt-2">Ikan Bakar</p>
+          <img alt="Ikan Bakar" class="w-24 h-24 object-cover rounded-full mx-auto" height="96" src="https://storage.googleapis.com/a1aa/image/7edyqvWTXIS1FqLdjZzpal5VGGEOTByjooeMTMU7MS3WymBUA.jpg" width="96"/>
+          <p class="mt-2">Ikan Bakar</p>
       </div>
       <div class="text-center">
-        <img alt="Nasi Campur" class="w-24 h-24 object-cover rounded-full mx-auto" height="96" src="https://storage.googleapis.com/a1aa/image/fIwdhKEToCxCSaGdyqIfRKkpaL18CBY9xHZqrO8ykeD1kNDoA.jpg" width="96"/>
-        <p class="mt-2">Nasi Campur</p>
+          <img alt="Nasi Campur" class="w-24 h-24 object-cover rounded-full mx-auto" height="96" src="https://storage.googleapis.com/a1aa/image/fIwdhKEToCxCSaGdyqIfRKkpaL18CBY9xHZqrO8ykeD1kNDoA.jpg" width="96"/>
+          <p class="mt-2">Nasi Campur</p>
       </div>
-    </div>
-  </section>
+  </div> 
+</section>
+
+<!-- Modal -->
+<div id="menuModal" class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center hidden">
+  <div class="bg-white rounded-lg overflow-hidden w-11/12 md:w-1/2">
+      <div class="p-6">
+          <h3 class="text-2xl font-bold mb-4">Menu dan Harga</h3>
+          <table class="min-w-full bg-white">
+              <thead>
+                  <tr>
+                      <th class="py-2 px-4 bg-gray-200">Menu</th>
+                      <th class="py-2 px-4 bg-gray-200">Harga</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                      <td class="border px-4 py-2">Nasi Goreng</td>
+                      <td class="border px-4 py-2">Rp 20,000</td>
+                  </tr>
+                  <tr>
+                      <td class="border px-4 py-2">Lalapan Ayam</td>
+                      <td class="border px-4 py-2">Rp 20,000</td>
+                  </tr>
+                  <tr>
+                      <td class="border px-4 py-2">Lalapan Nila</td>
+                      <td class="border px-4 py-2">Rp 25,000</td>
+                  </tr>
+                  <tr>
+                      <td class="border px-4 py-2">Ikan Bakar</td>
+                      <td class="border px-4 py-2">Rp 30,000</td>
+                  </tr>
+                  <tr>
+                      <td class="border px-4 py-2">Nasi Campur</td>
+                      <td class="border px-4 py-2">Rp 15,000</td>
+                  </tr>
+              </tbody>
+          </table>
+          <button id="closeButton" class="mt-4 bg-red-500 text-white py-2 px-4 rounded">Tutup</button>
+      </div>
+  </div>
+</div>
+
+<script>
+  document.getElementById('menuButton').addEventListener('click', function() {
+      document.getElementById('menuModal').classList.remove('hidden');
+  });
+
+  document.getElementById('closeButton').addEventListener('click', function() {
+      document.getElementById('menuModal').classList.add('hidden');
+  });
+</script>
+
 
   <section class="py-16 bg-gray-100" id="accommodation">
    <div class="container mx-auto text-center">
     <h2 class="text-3xl font-bold mb-8 fade-in">
-     Accommodation
+     Penginapan 
     </h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
      <div class="bg-white p-4 rounded-lg shadow-lg fade-in">
@@ -457,7 +597,7 @@
                 <div class="bg-gray-200 p-8 rounded-lg shadow-lg">
                  <div class="flex justify-around">
                   <section class="flex flex-col items-center">
-                   <a href="https://wa.me/yourphonenumber" target="_blank">
+                   <a href="https://wa.me/62085338834663" target="_blank">
                     <img alt="WhatsApp logo" class="w-12 h-12 mb-2" src="https://clipart.info/images/ccovers/1499955335whatsapp-icon-logo-png.png"/>
                     <span class="text-gray-700 font-bold">
                      WhatsApp
